@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BULLET_H
+#define BULLET_H
+
 #include "stdfx.hpp"
 
 class Bullet {
@@ -20,7 +22,7 @@ public:
         position.y = posY;
     }
 
-    void render() {
+    void render( sf::RenderWindow& window ) {
         window.draw( sprite );
     }
 
@@ -32,3 +34,4 @@ public:
     sf::FloatRect getGlobalBounds() { return sprite.getGlobalBounds(); }
 
 };
+#endif

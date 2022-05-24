@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include "stdfx.hpp"
 #include "bullet.hpp"
 
@@ -27,17 +29,17 @@ public:
         sprite.setPosition( SCREEN_W/2, SCREEN_H - sprite.getGlobalBounds().height );
     }
 
-    void render() {
+    void render( sf::RenderWindow& window ) {
         window.draw( sprite );
 
         if( bullets.size()>0 ) {
             for( int i=0; i<bullets.size(); i++ ) {
-                bullets[i].render();
+                bullets[i].render( window );
                 bullets[i].update();
                 if( bullets[i].getPosition().y < -20 ) {
                     bullets.erase(bullets.begin()+i);
                 }
-                debug("Bullets", bullets.size());
+                debug(window, "Bullets", bullets.size());
             }
         }
     }
@@ -76,3 +78,4 @@ public:
     float getWidth() { return sprite.getGlobalBounds().width; }
 
 };
+#endif

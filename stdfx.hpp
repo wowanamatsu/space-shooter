@@ -1,4 +1,6 @@
-#pragma once
+#ifndef STDFX_H
+#define STDFX_H
+
 #include <iostream>
 #include <vector>
 #include <SFML/Graphics.hpp>
@@ -7,12 +9,13 @@ const int SCREEN_W  = 1024;
 const int SCREEN_H  = 900;
 const int FPS       = 60;
 
-sf::RenderWindow window( sf::VideoMode(SCREEN_W, SCREEN_H ), "Space Shooter");
 sf::Event e;
+
+sf::Texture inimigo;
 
 
 //Helpers
-void debug(std::string strText="", unsigned int intText=0) {
+void debug(sf::RenderWindow& window, std::string strText="", unsigned int intText=0) {
     sf::Font font;
     sf::Text text;
 
@@ -27,3 +30,4 @@ void debug(std::string strText="", unsigned int intText=0) {
 
     window.draw(text);
 }
+#endif
