@@ -40,6 +40,7 @@ int main() {
             }
         }
         debug(window, "", enemies[0].getPosition().y);
+        debug(window, "", enemies.size(), {20, 60});
         
 
         //Draw

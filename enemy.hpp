@@ -16,8 +16,8 @@ private:
 public:
 
     Enemy(float posX, float posY) {
-        inimigo.loadFromFile("./assets/enemy/ship.png");
-        sprite.setTexture( inimigo );
+        enemyTexture.loadFromFile("./assets/enemy/ship.png");
+        sprite.setTexture( enemyTexture );
         sprite.setPosition( {posX, -posY} );
         speed = 2.f;
     }

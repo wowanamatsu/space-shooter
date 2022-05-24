@@ -11,11 +11,11 @@ const int FPS       = 60;
 
 sf::Event e;
 
-sf::Texture inimigo;
+sf::Texture enemyTexture;
 
 
 //Helpers
-void debug(sf::RenderWindow& window, std::string strText="", unsigned int intText=0) {
+void debug(sf::RenderWindow& window, std::string strText="", unsigned int intText=0, sf::Vector2f pos={20, 20}) {
     sf::Font font;
     sf::Text text;
 
@@ -23,7 +23,7 @@ void debug(sf::RenderWindow& window, std::string strText="", unsigned int intTex
     text.setFont( font );
     text.setCharacterSize(30);
     text.setFillColor(sf::Color::White);
-    text.setPosition({20, 20});
+    text.setPosition(pos);
 
     if( strText != "" or intText != 0)
         text.setString(strText + " "  + std::to_string(intText));
